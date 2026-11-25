@@ -54,6 +54,7 @@ int main(void)
     return 0;
 }
 */
+//now this section is making the camera orbit around the cube 
 #include "raylib.h"
 #include "raymath.h"
 #include "rlgl.h"
@@ -70,13 +71,13 @@ int main(void)
     camera.up = (Vector3){0.0f, 1.0f, 0.0f};
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
-    SetCameraMode(camera, CAMERA_ORBITAL);
+    
 
     while (!WindowShouldClose())
     {
-        UpdateCamera(&camera, CAMERA_ORBITAL);
         static float rotation = 0.0f;
         rotation += 0.5f;
+        UpdateCamera(&camera, CAMERA_ORBITAL);
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
